@@ -1,0 +1,100 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Bignum dumper</title><style>
+
+</style>
+</head><body>
+<h1 id="bignum-dumper">Bignum dumper</h1>
+<p>Is an IDA plugin with dual purpose.</p>
+<ul>
+<li>Assisting with dumping of big integers from IDA database.</li>
+<li>Find relations between the acquired integers.</li>
+</ul>
+<h2 id="assisting-with-dumping-of-big-integers-from-ida-database-">Assisting with dumping of big integers from IDA database.</h2>
+<p><em>Note: When I write a (big) integer I mean a number of unlimited size, aka bignum.</em></p>
+<p>There are many ways how to store an integer in the computer memory. Usually the integers are stored as an <em>array</em> of <em>words</em>.</p>
+<h4 id="arrays">arrays</h4>
+<p>The arrays can have fixed length or the length is written somewhere else in the memory.
+One also has to know the order of words, whether the most significatn word is first or last.</p>
+<h4 id="words">words</h4>
+<p>A word is a sequence of bytes. This plugin supports 1,2,4,8 byte words. But any other length can be programmed in easily.
+Also here it is necessary to know the order of bytes in the word.</p>
+<p>For more details about this see any modern textbook about computer algebra or read a manual for GMP.</p>
+<p>Sometimes integers are stored in textual form in some base. Supported basis are binar, octal, decimal, hexadecimal, base64, and bitcoin base58. For these, the word size is always one.</p>
+<h2 id="find-relations-between-the-acquired-integers-">Find relations between the acquired integers.</h2>
+<p>By a relation I mean a formula that is satisfied if the acquired numbers are fed into it.</p>
+<ul>
+<li>a + b = c is satisfied when a=0, b=0, c=0, this is not that interesting.</li>
+<li>y^2 % n = (x^3 + a x + b)%n is satisfied when [x,y] is a point on Weierstrass elliptic curve with parameters a, b, n.</li>
+<li>(x^e)^d % n = x for all x if (e,n) is RSA public key and (e,d) is RSA private key.</li>
+</ul>
+<p>This plugin currently supports basic arithmetic, modular arithmetic and arithmetic over Elliptic curves in Weierstrass, Edwards, or Twisted Edwards form.</p>
+<p>Once these relations are discovered some algorithms are run on them.</p>
+<ul>
+<li>There is Wiener&#39;s attack for RSA with low private exponent.</li>
+<li>RSA Small prime difference attack</li>
+<li>Factorisation of n once both e and d are known</li>
+<li>Detects of the situation that there are discovered points on elliptic curves, multiplicants and their multiples. (see the Examples section).</li>
+<img src="results_sample.png"/>
+<li>...</li>
+</ul>
+<h2 id="ui-documentation">UI documentation</h2>
+<img src=UI.png/>
+<p>Run the plugin by selecting menu Edit / Plugins / Bignum dumper or alt-e,g,b.</p>
+<h3 id="preset">preset</h3>
+<p>Here you can quickly select one of the predefined configurations.</p>
+<h3 id="address">address</h3>
+<p>Write here the memory address of where the integer is located.
+You can write any IDC expression. My favourite addresses are: &#39;here&#39;, &#39;Dword(here+8)&#39;.</p>
+<h3 id="guess-template-button">Guess template button</h3>
+<p>Fill a valid address and press this button if you want the plugin to guess the type of the number at that address.
+This is capable of detection all the presets. But beware that sometimes hexadecimal number can look like octal and base64 can look like base58.</p>
+<h3 id="words">words</h3>
+<p>Write here the length of the dumped integer in <em>words</em>.</p>
+<h3 id="word-size">word size</h3>
+<p>Choose here the desired word size.</p>
+<h3 id="word-size">word size</h3>
+<p>Choose here the base of dumped integer.</p>
+<h3 id="word-endian">word endian</h3>
+<p>Choose here the order of bytes in the word.</p>
+<h3 id="bignum-endian">bignum endian</h3>
+<p>Choose here the order of words in the bignum.</p>
+<h3 id="example">example</h3>
+<p>This shows how the number one would be stored int the memory for selected combination of options. </p>
+<h3 id="dump-button">dump button</h3>
+<p>Press this button once you are satisfied with your choice of options. The plugin will try to read the memory and insert the dumped integer into the list.</p>
+<h3 id="guess-button">guess button</h3>
+<p>This willl start the second part of the plugin. All results are written into IDA console.</p>
+<h3 id="save-load-buttons">save / load buttons</h3>
+<p>Use these if you want to save / load the list of dumped integers.</p>
+<h3 id="idc-expression-button">idc expression button</h3>
+<p>Press this button if you want the program to generate and IDC command for current configuration.</p>
+<h3 id="numbers">numbers</h3>
+<p>This list contains all the dumped integers in decimal and hexadecimal presentation. Also shows the number of bits of the integer and a whether it is a prime number.
+You can use the context menu to add / delete to / from the list.
+(You can also filter and sort like in every other IDA chooser.)</p>
+<h2 id="idc-interface">IDC interface</h2>
+<p>This extends the IDC language with three functions.</p>
+<pre><code>dump(address, length, word_size, base_idx, word_endian, bignum_endian);
+// use this function if you want to dump the integers from breakpoint callback or any other automation of integer dumping
+// usually you won&#39;t need to enter arguments for this by hand, the UI will help you with that
+// allowed values for word_endian and bignum_endian are numbers -1 and 1.
+
+BER_int_length(address)
+//tries to interpret data at address as BER encoded integer and returns it&#39;s length 
+BER_int_offset(address)
+//tries to interpret data at address as BER encoded integer and the offset to raw integer bytes
+</code></pre><h2 id="examples-">Examples:</h2>
+<p>samples\elliptic_curve.txt:
+This file demonstrates the ability to detect the points at the Weierstrass elliptic curve. Just load this text file in the plugin and click on guess button.</p>
+<p>samples\encodings.bin:
+this simple file just demonstrates the ability to guess and dump the numbers in different bases. </p>
+<p>samples\BER:
+File BER.bin contains some BER encoded numbers. 
+Script find_all_ber.idc demonstrates how to dump them automatically.</p>
+<p>samples\keygenme_3:
+samples\Ed_Edd_n_Eddy:
+Try to use my plugin to crack these two crackmes from Tamaroth / crackmes.us.</p>
+<p>Just find the interesting functions, dump numbers that go in, dump a number that goes out. Guess what the function does and move to another one.</p>
+<p>The principle of both crackmes can be revealed in under 30 minutes. And there is no need to read more than 100 lines of assembler.</p>
+<p><em>Milan Bohacek, Charles University in Prague</em></p>
+
+</body></html>

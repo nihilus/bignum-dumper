@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug 32-bit|Win32">
+      <Configuration>Debug 32-bit</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release 32-bit|Win32">
+      <Configuration>Release 32-bit</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug 64-bit|Win32">
+      <Configuration>Debug 64-bit</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release 64-bit|Win32">
+      <Configuration>Release 64-bit</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A47A209E-5278-46F7-ACF1-0EDA8C93CF47}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Project1</RootNamespace>
+    <ProjectName>Dumper</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.CPP.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug 32-bit|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <UseOfAtl>false</UseOfAtl>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release 32-bit|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <UseOfAtl>false</UseOfAtl>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug 64-bit|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <UseOfAtl>false</UseOfAtl>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release 64-bit|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <UseOfAtl>false</UseOfAtl>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCInstallDir)VCWizards\AppWiz\IDA Pro\MyProperties.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug 32-bit|Win32'">
+    <Import Project="$(LocalAppData)\Microsoft\VisualStudio\12.0\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(LocalAppData)\Microsoft\VisualStudio\12.0\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release 32-bit|Win32'">
+    <Import Project="$(LocalAppData)\Microsoft\VisualStudio\12.0\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(LocalAppData)\Microsoft\VisualStudio\12.0\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug 64-bit|Win32'">
+    <Import Project="$(LocalAppData)\Microsoft\VisualStudio\12.0\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(LocalAppData)\Microsoft\VisualStudio\12.0\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release 64-bit|Win32'">
+    <Import Project="$(LocalAppData)\Microsoft\VisualStudio\12.0\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(LocalAppData)\Microsoft\VisualStudio\12.0\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+    <NuGetPackageImportStamp>3b014c66</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug 64-bit|Win32'">
+    <OutDir>$(SolutionDir)Build\$(IdaSdkVersion)\$(Configuration)\</OutDir>
+    <IntDir>Build\$(IdaSdkVersion)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)</TargetName>
+    <TargetExt>.p64</TargetExt>
+    <ExtensionsToDeleteOnClean>*.cdf%3b*.cache%3b*.obj%3b*.ilk%3b*.resources%3b*.tlb%3b*.tli%3b*.tlh%3b*.tmp%3b*.rsp%3b*.pgc%3b*.pgd%3b*.meta%3b*.tlog%3b*.manifest%3b*.res%3b*.pch%3b*.exp%3b*.idb%3b*.rep%3b*.xdc%3b*.pdb%3b*_manifest.rc%3b*.bsc%3b*.sbr%3b*.xml%3b*.metagen%3b*.bi%3b*.p64</ExtensionsToDeleteOnClean>
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug 32-bit|Win32'">
+    <OutDir>$(SolutionDir)Build\$(IdaSdkVersion)\$(Configuration)\</OutDir>
+    <IntDir>Build\$(IdaSdkVersion)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)</TargetName>
+    <TargetExt>.plw</TargetExt>
+    <ExtensionsToDeleteOnClean>*.cdf%3b*.cache%3b*.obj%3b*.ilk%3b*.resources%3b*.tlb%3b*.tli%3b*.tlh%3b*.tmp%3b*.rsp%3b*.pgc%3b*.pgd%3b*.meta%3b*.tlog%3b*.manifest%3b*.res%3b*.pch%3b*.exp%3b*.idb%3b*.rep%3b*.xdc%3b*.pdb%3b*_manifest.rc%3b*.bsc%3b*.sbr%3b*.xml%3b*.metagen%3b*.bi%3b*.plw</ExtensionsToDeleteOnClean>
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+    <Linkage-mpir>static</Linkage-mpir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release 32-bit|Win32'">
+    <OutDir>$(SolutionDir)Build\$(IdaSdkVersion)\$(Configuration)\</OutDir>
+    <IntDir>Build\$(IdaSdkVersion)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)</TargetName>
+    <TargetExt>.plw</TargetExt>
+    <ExtensionsToDeleteOnClean>*.cdf%3b*.cache%3b*.obj%3b*.ilk%3b*.resources%3b*.tlb%3b*.tli%3b*.tlh%3b*.tmp%3b*.rsp%3b*.pgc%3b*.pgd%3b*.meta%3b*.tlog%3b*.manifest%3b*.res%3b*.pch%3b*.exp%3b*.idb%3b*.rep%3b*.xdc%3b*.pdb%3b*_manifest.rc%3b*.bsc%3b*.sbr%3b*.xml%3b*.metagen%3b*.bi%3b*.plw</ExtensionsToDeleteOnClean>
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+    <Linkage-mpir>static</Linkage-mpir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release 64-bit|Win32'">
+    <OutDir>$(SolutionDir)Build\$(IdaSdkVersion)\$(Configuration)\</OutDir>
+    <IntDir>Build\$(IdaSdkVersion)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)</TargetName>
+    <TargetExt>.p64</TargetExt>
+    <ExtensionsToDeleteOnClean>*.cdf%3b*.cache%3b*.obj%3b*.ilk%3b*.resources%3b*.tlb%3b*.tli%3b*.tlh%3b*.tmp%3b*.rsp%3b*.pgc%3b*.pgd%3b*.meta%3b*.tlog%3b*.manifest%3b*.res%3b*.pch%3b*.exp%3b*.idb%3b*.rep%3b*.xdc%3b*.pdb%3b*_manifest.rc%3b*.bsc%3b*.sbr%3b*.xml%3b*.metagen%3b*.bi%3b*.p64</ExtensionsToDeleteOnClean>
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+    <Linkage-mpir>static</Linkage-mpir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug 64-bit|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>Include;$(IdaSdkIncludeDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader />
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <Optimization>Disabled</Optimization>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <OmitFramePointers>true</OmitFramePointers>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <CallingConvention>StdCall</CallingConvention>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_USRDLL;_DEBUG;_CRT_SECURE_NO_DEPRECATE;MAXSTR=1024;NO_OBSOLETE_FUNCS;__NT__;__IDP__;__EA64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile />
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>$(IdaSdkLibraryDir)x86_win_vc_64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(IdaSdkLibraryDir)\ida.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LinkTimeCodeGeneration />
+      <EnableCOMDATFolding />
+      <OptimizeReferences>false</OptimizeReferences>
+      <OutputFile>$(OutDir)$(ProjectName).p64</OutputFile>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(OutDir)$(ProjectName).mpv</MapFileName>
+      <ProgramDatabaseFile>$(OutDir)$(ProjectName).pdb</ProgramDatabaseFile>
+      <AdditionalOptions>/export:PLUGIN %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Message>Copying "$(TargetFileName)" to "$(IdaPluginDir)"...</Message>
+      <Command>copy /b /y "$(TargetDir)$(TargetFileName)" "$(IdaPluginDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug 32-bit|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>Include;$(IdaSdkIncludeDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader />
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <Optimization>Disabled</Optimization>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <OmitFramePointers>true</OmitFramePointers>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_USRDLL;_DEBUG;_CRT_SECURE_NO_DEPRECATE;MAXSTR=1024;NO_OBSOLETE_FUNCS;__NT__;__IDP__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile />
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>$(IdaSdkLibraryDir)x86_win_vc_32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(IdaSdkLibraryDir)\ida.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LinkTimeCodeGeneration />
+      <EnableCOMDATFolding />
+      <OptimizeReferences>false</OptimizeReferences>
+      <OutputFile>$(OutDir)$(ProjectName).plw</OutputFile>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(OutDir)$(ProjectName).mpv</MapFileName>
+      <ProgramDatabaseFile>$(OutDir)$(ProjectName).pdb</ProgramDatabaseFile>
+      <AdditionalOptions>/export:PLUGIN %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Message>Copying "$(TargetFileName)" to "$(IdaPluginDir)"...</Message>
+      <Command>copy /b /y "$(TargetDir)$(TargetFileName)" "$(IdaPluginDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release 32-bit|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>Include;$(IdaSdkIncludeDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader />
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <Optimization>MaxSpeed</Optimization>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <OmitFramePointers>true</OmitFramePointers>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_USRDLL;NDEBUG;_CRT_SECURE_NO_DEPRECATE;MAXSTR=1024;NO_OBSOLETE_FUNCS;__NT__;__IDP__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile />
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>$(IdaSdkLibraryDir)x86_win_vc_32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(IdaSdkLibraryDir)\ida.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LinkTimeCodeGeneration />
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <OutputFile>$(OutDir)$(ProjectName).plw</OutputFile>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(OutDir)$(ProjectName).mpv</MapFileName>
+      <ProgramDatabaseFile>$(OutDir)$(ProjectName).pdb</ProgramDatabaseFile>
+      <AdditionalOptions>/export:PLUGIN %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Message>Copying "$(TargetFileName)" to "$(IdaPluginDir)"...</Message>
+      <Command>copy /b /y "$(TargetDir)$(TargetFileName)" "$(IdaPluginDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release 64-bit|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>Include;$(IdaSdkIncludeDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader />
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <Optimization>MaxSpeed</Optimization>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <OmitFramePointers>true</OmitFramePointers>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_USRDLL;NDEBUG;_CRT_SECURE_NO_DEPRECATE;MAXSTR=1024;NO_OBSOLETE_FUNCS;__NT__;__IDP__;__EA64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile />
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>$(IdaSdkLibraryDir)x86_win_vc_64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(IdaSdkLibraryDir)\ida.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LinkTimeCodeGeneration />
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <OutputFile>$(OutDir)$(ProjectName).p64</OutputFile>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(OutDir)$(ProjectName).mpv</MapFileName>
+      <ProgramDatabaseFile>$(OutDir)$(ProjectName).pdb</ProgramDatabaseFile>
+      <AdditionalOptions>/export:PLUGIN %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Message>Copying "$(TargetFileName)" to "$(IdaPluginDir)"...</Message>
+      <Command>copy /b /y "$(TargetDir)$(TargetFileName)" "$(IdaPluginDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\Dumper.h" />
+    <ClInclude Include="Include\elliptic.h" />
+    <ClInclude Include="Include\sdk_hacks.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\elliptic.cpp" />
+    <ClCompile Include="Source\guesser.cpp" />
+    <ClCompile Include="Source\Dumper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="license.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.CPP.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCInstallDir)VCWizards\AppWiz\IDA Pro\MyProperties.targets" />
+    <Import Project="packages\libgmp_vc120.5.1.3.2\build\native\libgmp_vc120.targets" Condition="Exists('packages\libgmp_vc120.5.1.3.2\build\native\libgmp_vc120.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\libgmp_vc120.5.1.3.2\build\native\libgmp_vc120.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\libgmp_vc120.5.1.3.2\build\native\libgmp_vc120.targets'))" />
+  </Target>
+</Project>
